@@ -5,7 +5,7 @@ import numpy as np
 
 DEFAULT_PERCENTAGE_ASSOCIATIONS_TO_KEEP = 0.85
 
-class OutlierFilterAlgorithm(metaclass=ABCMeta):
+class OutlierFilterAlgorithm(ABCMeta):
     @abstractmethod
     def filter(self, associations, errors):
         pass
