@@ -52,7 +52,7 @@ class LibnaboKdTree(KdTree):
         try:
             self.pynabo = import_module('pynabo')
         except ImportError as e:
-            raise ImportError('Could not instantiate LibnaboKdTree: pynabo not found') from e
+            raise ImportError('Could not instantiate LibnaboKdTree: pynabo not found')
 
     def build(self, pointcloud):
         self.pointcloud = pointcloud.T.copy()
