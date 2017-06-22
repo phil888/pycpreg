@@ -56,7 +56,7 @@ class ICPAlgorithm:
             delta = error_after - error_before
             latest_error = error_after
             if print_verbose:
-                print('Error: {} (Δ {})'.format(error_after, delta))
+                print('Error: %f (delta %f)'.format(error_after, delta))
 
             n_iterations = n_iterations + 1
 
