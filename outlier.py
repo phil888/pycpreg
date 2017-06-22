@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 
-from abc import ABCMeta, abstractmethod
 import numpy as np
 
 DEFAULT_PERCENTAGE_ASSOCIATIONS_TO_KEEP = 0.85
 
-class OutlierFilterAlgorithm(ABCMeta):
+class OutlierFilterAlgorithm:
     @abstractmethod
     def filter(self, associations, errors):
         pass
