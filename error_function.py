@@ -28,9 +28,9 @@ class PointToPointICPErrorFunction(ICPErrorFunction):
 
     def minimize(self, reading, associations):
         associated_reading = homogeneous2euclidian(
-            reading[:, associations[:, 0]])
+            reading[:, associations[:, 0][:, 0]])
         associated_reference = homogeneous2euclidian(
-            self.reference[:, associations[:, 1]])
+            self.reference[:, associations[:, 0][:, 1]])
 
         reading_centroid = np.average(associated_reading, axis=1)
         reference_centroid = np.average(associated_reference, axis=1)
