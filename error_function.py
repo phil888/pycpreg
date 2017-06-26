@@ -19,9 +19,9 @@ class ICPErrorFunction():
 
 class PointToPointICPErrorFunction(ICPErrorFunction):
     def compute(self, reading, associations):
-        r = reading[:, associations[:,0]]
-        ref = self.reference[:,associations[:,1]]
-        vectors = (reading[:, associations[:, 0]] - self.reference[:, associations[:, 1]])
+        r = reading[:, associations[:,0][:,0]]
+        ref = self.reference[:,associations[:,0][:,1]]
+        vectors = (reading[:, associations[:,0][:, 0]] - self.reference[:, associations[:,0][:, 1]])
         distances = np.linalg.norm(vectors, axis=0)
 
         return np.sum(distances)
